@@ -1,0 +1,29 @@
+/* CUSTOM STYLING FOR MusicView */
+
+/* Foundation Level Stylings:
+
+/* TYPEFACE FOR HEADINGS, BUTTONS, ALERTS */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,600i,700,700i&subset=latin-ext');
+
+/* TYPEFACE FOR BODY TEXT */
+
+@import url('https://fonts.googleapis.com/css?family=Spectral:400,600,600i,700,700i&subset=latin-ext');
+
+body {
+    width: 98%;
+    margin: 0 auto 0 auto;
+    font-family: 'Spectral', 'Times', serif;
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+.well {
+    background-color: rgb(142, 37, 37);
+}
+
+h1, h2, h3,
+h4, h5, h6  {
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
+}
+
