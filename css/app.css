@@ -90,7 +90,7 @@ input#userQuery {
 
 #searchResults {
     margin-top: -15px;
-    border: 1.5px dotted #333333;
+    border: 1px dotted #333333;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 15px;
