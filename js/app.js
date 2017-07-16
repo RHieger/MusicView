@@ -6,8 +6,26 @@ $(document).ready(function()  {
 
   console.log('The DOM is now loaded.');
 
-  console.log('Proof:');
+  $('#videoSearch').on('click', function(event) {
 
-  console.log(jQuery);
+    event.preventDefault();   // Prevent button default behavior.
+
+    console.log('Button clicked!');
+
+  })
+
+  function init() {
+
+    gapi.client.setApiKey('AIzaSyBb3dDwwcSlFrZUE19WdMrBp2CiZnSSfFY');
+
+    gapi.client.load('youtube', 'v3', function()  {
+
+      // YouTube API is ready.
+
+      console.log('YouTube API is Ready.');
+
+    });
+
+  }   // end function init()
 
 });
