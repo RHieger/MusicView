@@ -4,20 +4,95 @@
 
     <head>
 
+        <meta charset="utf-8" />
+
+        <meta name="viewpot" content="width=device-width, initial-scale=1.0" />
+
         <title>MusicView</title>
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+        <!-- Custom Styling -->
+
+        <link rel="stylesheet" href="css/app.css" />
 
     </head>
 
     <body>
 
-        <h1>Welcome to MusicView</h1>
+        <div class="container-fluid">
+            
+            <header class="row well">
+                
+                <div id="vidSearchBox" class="col-md-7 col-lg-7">
+                    
+                    <h1>Welcome to MusicView</h1>
+
+                    <h2>
+                        <small>Select Your Music Genre:</small>
+                    </h2>
+
+                    <select>
+                        <option>Choose Your Genre&hellip;</option>
+                        <option>All Music</option>
+                        <option>Christian Music</option>
+                        <option>Classical Music</option>
+                        <option>Country</option>
+                        <option>Electronic Music</option>
+                        <option>Hip Hop Music</option>
+                        <option>Independent Music</option>
+                        <option>Jazz</option>
+                        <option>Music of Asia</option>
+                        <option>Music of Latin America</option>
+                        <option>Pop Music</option>
+                        <option>Reggae</option>
+                        <option>Rhythm and Blues</option>
+                        <option>Rock Music</option>
+                        <option>Soul Music</option>
+                    </select>
+
+                    <label for="searchString">Search for:</label>
+
+                    <input type="text" name="searchString" id="userQuery"
+                     placeholder="What would you like to view?" / >
+
+                    <button id="videoSearch" class="btn btn-primary">search</button>
+
+                </div>
+
+                <div class="col-md-5 col-lg-5">
+                    <figure>
+                        <a href="http://placeholder.com">
+                            <img src="http://via.placeholder.com/500x200">
+                        </a>
+                    </figure>
+                </div>
+
+            </header>
+
+        </div>
+
+        <!-- Searched Video Content -->
+
+        <main>
+            
+        <section id="searchResults">
+            <!-- Dynamic content lives here -->
+            Section Placeholder Content
+        </section>
+
+        </main>
+
+        <!-- Latest jQuery Library -->
 
         <script
          src="https://code.jquery.com/jquery-3.2.1.min.js"
          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
          crossorigin="anonymous"></script>
+
+         <!-- Google API Library -->
         
-        <script src="https://apis.google.com/js/api.js"></script>
+        <script src="https://apis.google.com/js/client.js"></script>
 
         <script src="js/app.js"></script>
 
