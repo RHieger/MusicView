@@ -29,6 +29,8 @@ $(document).ready(function()    {
 
             console.log(response);
 
+            $('#content').height('1985');
+
             $('div#searchResults').html('');
 
             var results = response.result;
@@ -40,7 +42,7 @@ $(document).ready(function()    {
                 // NOTE: Standard width and height for embedded HD YouTube
                 //       videos is 640 x 360.
 
-                $('div#searchResults').append('<div>' + '<iframe width="450" height="253"' +
+                $('div#searchResults').append('<div>' + '<iframe width="425" height="239"' +
                  'src="//www.youtube.com/embed/' + item.id.videoId + '"' +
                  'frameborder="0" allowfullscreen>' + '</iframe>' + '</div>');
 

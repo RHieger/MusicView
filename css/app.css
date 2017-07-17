@@ -18,6 +18,15 @@ body {
     line-height: 22.4px;
 }
 
+header {
+    width: 98%;
+    position: fixed;
+}
+
+main {
+    margin-top: 245px;
+}
+
 .well {
     background-color: rgb(128, 128, 0);
 }
@@ -85,6 +94,10 @@ label[for='searchString']   {
     margin-right: 6px;
 }
 
+select#genres {
+    background-color: rgb(255, 255, 204);
+}
+
 input#userQuery {
     width: 300px;
     border: 1px solid #333333;
@@ -93,9 +106,15 @@ input#userQuery {
     padding: 6px 12px;
 }
 
+/* Special Search Results Styling */
+
 #searchResults  {
-    width: 98%;
-    margin: 0 auto 0 auto;
+    width: 100%;
+    padding-left: 15px;
+}
+
+#searchResults #searchHead  {
+    margin-top: -30px;
 }
 
 #searchResults div {
@@ -104,10 +123,12 @@ input#userQuery {
 }
 
 #content {
-    height: 100%;
     border: 1px dotted #333333;
     border-radius: 5px;
     padding-top: 12px;
     padding-bottom: 12px;
 }
 
+#searchHead {
+
+}
