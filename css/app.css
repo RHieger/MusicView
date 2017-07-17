@@ -57,6 +57,7 @@ header div#vidSearchBox {
     border: 1.5px dotted #ffffff;
     border-radius: 12px;
     padding: 15px 12px;
+    margin-top: 12px;
 }
 
 header #videoSearch {
@@ -85,13 +86,29 @@ label[for='searchString']   {
 }
 
 input#userQuery {
-    width: 250px;
+    width: 300px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 204);
+    padding: 6px 12px;
 }
 
-#searchResults {
-    margin-top: -15px;
+#searchResults  {
+    width: 98%;
+    margin: 0 auto 0 auto;
+}
+
+#searchResults div {
+    float: left;
+    margin-right: 6px;
+}
+
+#content {
+    height: 100%;
     border: 1px dotted #333333;
+    border-radius: 5px;
     padding-top: 12px;
     padding-bottom: 12px;
-    padding-left: 15px;
+    /*padding-left: 15px;*/
 }
+

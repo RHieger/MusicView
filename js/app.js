@@ -16,7 +16,7 @@ $(document).ready(function()    {
 
             part: 'snippet',
             type: 'video',
-            maxResults: 3,
+            maxResults: 24,
             order: 'viewCount',
             publishedAfter: '2015-01-01T00:00:00Z',
             q: encodeURIComponent($('#userQuery').val()).replace(/%20/g, '+')
@@ -24,7 +24,7 @@ $(document).ready(function()    {
             //order: 'viewCount',
             //publishedAfter: '2015-01-01T00:00Z'
 
-        });
+        }); // end request
 
         // Execute the request:
 
@@ -32,7 +32,7 @@ $(document).ready(function()    {
 
             console.log(response);
 
-            $('#results').html('');
+            $('div#searchResults').html('');
 
             var results = response.result;
 
@@ -40,26 +40,22 @@ $(document).ready(function()    {
 
                 console.log(item);
 
-                //$('#results').append(item.id.videoId + ' ' +
-                    //item.snippet.title + '<br />');
+                // NOTE: Standard width and height for embedded HD YouTube
+                //       videos is 640 x 360.
 
-                $('#searchResults').append('<h2>' + item.snippet.title + '</h2>' +
-                 '<iframe class="video w100" width="640" height="360"' +
+                // $('div#searchResults').append('<div>' + '<iframe width="480" height="270"' +
+                //  'src="//www.youtube.com/embed/' + item.id.videoId + '"' +
+                //  'frameborder="0" allowfullscreen>' + '</iframe>' + '</div>');
+
+                $('div#searchResults').append('<div>' + '<iframe width="450" height="253"' +
                  'src="//www.youtube.com/embed/' + item.id.videoId + '"' +
-                 'frameborder="0" allowfullscreen>' +        
-                 '</iframe>');
+                 'frameborder="0" allowfullscreen>' + '</iframe>' + '</div>');
 
-                // $.get('tpl/item.html', function(data)   {
-
-                //     $('#results').append(data);
-
-                // });
-
-            });
+            });     // end $.each(results.items)
 
         }); // end request.execute()
 
-        $('#search').val('');
+        $('#userQuery').val('');
 
     });    // end $('#searchBtn').on()
 
@@ -67,7 +63,7 @@ $(document).ready(function()    {
 
 function init() {
 
-    gapi.client.setApiKey('AIzaSyBb3dDwwcSlFrZUE19WdMrBp2CiZnSSfFY');
+    gapi.client.setApiKey('AIzaSyA9HOMNKiV3K5ZiGDVZlOTFovYyu8MgHYg');
 
     gapi.client.load('youtube', 'v3', function()    {
 
@@ -75,4 +71,4 @@ function init() {
 
     });
 
-}
+}   // end $(document).ready()
