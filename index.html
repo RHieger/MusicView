@@ -32,23 +32,63 @@
                         <small>Select Your Music Genre:</small>
                     </h2>
 
+                    <!-- MUSIC GENRE DROPDOWN SELECTION
+
+                         NOTE: ALL DATA ITEMS DERIVED FROM YouTube Data API
+                         Documentation WITH URL:
+
+                         https://developers.google.com/youtube/v3/docs/search/list
+
+                    -->
+
                     <select>
-                        <option>Choose Your Genre&hellip;</option>
-                        <option>All Music</option>
-                        <option>Christian Music</option>
-                        <option>Classical Music</option>
-                        <option>Country</option>
-                        <option>Electronic Music</option>
-                        <option>Hip Hop Music</option>
-                        <option>Independent Music</option>
-                        <option>Jazz</option>
-                        <option>Music of Asia</option>
-                        <option>Music of Latin America</option>
-                        <option>Pop Music</option>
-                        <option>Reggae</option>
-                        <option>Rhythm and Blues</option>
-                        <option>Rock Music</option>
-                        <option>Soul Music</option>
+                        <option id="opt0">Choose Your Genre&hellip;</option>
+
+                        <option id="opt1" data-all-music="/m/04rlf">
+                            All Music
+                        </option>
+                        <option id="opt1" data-christian-music="/m/02mscn">
+                            Christian Music
+                        </option>
+                        <option id="opt2" data-classical-music="/m/0ggq0m">
+                            Classical Music
+                        </option>
+                        <option id="opt3" data-country-music="/m/01lyv">
+                            Country
+                        </option>
+                        <option id="opt4" data-electronic-music="/m/02lkt">
+                            Electronic Music
+                        </option>
+                        <option id="opt5" data-hip-hop-music="/m/0glt670">
+                            Hip Hop Music
+                        </option>
+                        <option id="opt6" data-independent-music="/m/05rwpb">
+                            Independent Music
+                        </option>
+                        <option id="opt7" data-jazz-music="/m/03_d0">
+                            Jazz
+                        </option>
+                        <option id="opt8" data-asian-music="/m/028sqc">
+                            Music of Asia
+                        </option>
+                        <option id="opt9" data-latin-music="/m/0g293">
+                            Music of Latin America
+                        </option>
+                        <option id="opt10" data-pop-music="/m/064t9">
+                            Pop Music
+                        </option>
+                        <option id="opt11" data-reggae-music="/m/06cqb">
+                            Reggae
+                        </option>
+                        <option id="opt12" data-rhythm-and-blues-music="/m/06j6l">
+                            Rhythm and Blues
+                        </option>
+                        <option id="opt13" data-rock-music="/m/06by7">
+                            Rock Music
+                        </option>
+                        <option id="opt14" data-soul-music="/m/0gywn">
+                            Soul Music
+                        </option>
                     </select>
 
                     <label for="searchString">Search for:</label>
@@ -70,33 +110,32 @@
 
             </header>
 
-        </div>
+            <!-- Searched Video Content -->
 
-        <!-- Searched Video Content -->
+            <main id="content">
+                
+                <div id="searchResults">
+                    <!-- Dynamic content lives here -->
+                </div>
 
-        <main id="content">
+            </main> <!-- END content -->
+
+            <!-- Latest jQuery Library -->
+
+            <script
+             src="https://code.jquery.com/jquery-3.2.1.min.js"
+             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+             crossorigin="anonymous"></script>
+
+            <!-- Main App -->
+
+            <script src="js/app.js"></script>
+
+            <!-- Google API Library -->
             
-            <div id="searchResults">
-                <!-- Dynamic content lives here -->
-            </div>
+            <script src="https://apis.google.com/js/client.js?onload=init"></script>
 
-        </main> <!-- END content -->
-
-        <!-- Latest jQuery Library -->
-
-        <script
-         src="https://code.jquery.com/jquery-3.2.1.min.js"
-         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-         crossorigin="anonymous"></script>
-
-        <!-- Main App -->
-
-        <script src="js/app.js"></script>
-
-        <!-- Google API Library -->
-        
-        <script src="https://apis.google.com/js/client.js?onload=init"></script>
-
+        </div>  <!-- END container-fluid -->
 
     </body>
 
