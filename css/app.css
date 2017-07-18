@@ -133,9 +133,17 @@ input#userQuery {
 #loadMsg {
     width: 200px;
     height: 35px;
-    margin-right: auto;
-    margin-left: auto;
-    border: inset 2px #333333;
+    border: inset 3px #888888;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 204);
+}
+
+#loadMsg p {
+    margin-top: 4px;
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 26, 26);    /* Red 45% */
 }
 
 #searchHead {
