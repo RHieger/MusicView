@@ -3,10 +3,15 @@
 $(document).ready(function()    {
 
     console.log('The DOM is ready.');
-    var topicId;
+
+    var topicId;    // topicId for API request
 
     $('#genres').on('change', function() {
+
+        // Extract topicId from #genres:
+
         topicId = $(this).val();
+
     });
 
     $('#videoSearch').on('click', function(event)    {
@@ -21,23 +26,13 @@ $(document).ready(function()    {
 
         console.log(request);
 
-        // var request = gapi.client.youtube.search.list({
-
-        //     part: 'snippet',
-        //     type: 'video',
-        //     maxResults: 24,
-        //     order: 'relevance',
-        //     q: encodeURIComponent($('#userQuery').val()).replace(/%20/g, '+')
-
-        // }); // end request
-
         // Execute the request:
 
         request.execute(function(response)  {
 
             console.log(response);
 
-            $('#content').height('1985');
+            $('#content').height('2050');
 
             $('div#searchResults').html('');
 
