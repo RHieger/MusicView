@@ -110,7 +110,7 @@ input#userQuery {
 
 #searchResults  {
     width: 100%;
-    padding-left: 15px;
+    padding-left: 45px;
 }
 
 #searchResults #searchHead  {
@@ -130,5 +130,8 @@ input#userQuery {
 }
 
 #searchHead {
-
+    /*margin-top: -25px;*/
+    margin-bottom: 12px;
+    padding-left: 45px;
+    display: none;
 }

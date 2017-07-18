@@ -3,6 +3,11 @@
 $(document).ready(function()    {
 
     console.log('The DOM is ready.');
+    var topicId;
+
+    $('#genres').on('change', function() {
+        topicId = $(this).val();
+    });
 
     $('#videoSearch').on('click', function(event)    {
 
@@ -11,17 +16,20 @@ $(document).ready(function()    {
         console.log('Button clicked!');
 
         // Prepare YouTube API request:
+        
+        var request = buildQuery(topicId);
 
-        var request = gapi.client.youtube.search.list({
+        console.log(request);
 
-            part: 'snippet',
-            type: 'video',
-            maxResults: 24,
-            order: 'relevance',
-            publishedAfter: '2015-01-01T00:00:00Z',
-            q: encodeURIComponent($('#userQuery').val()).replace(/%20/g, '+')
+        // var request = gapi.client.youtube.search.list({
 
-        }); // end request
+        //     part: 'snippet',
+        //     type: 'video',
+        //     maxResults: 24,
+        //     order: 'relevance',
+        //     q: encodeURIComponent($('#userQuery').val()).replace(/%20/g, '+')
+
+        // }); // end request
 
         // Execute the request:
 
@@ -32,6 +40,8 @@ $(document).ready(function()    {
             $('#content').height('1985');
 
             $('div#searchResults').html('');
+
+            $('#searchHead').show();
 
             var results = response.result;
 
@@ -48,21 +58,38 @@ $(document).ready(function()    {
 
             });     // end $.each(results.items)
 
-        }); // end request.execute()
+            }); // end request.execute()
 
-        $('#userQuery').val('');
+            $('#userQuery').val('');
 
-    });    // end $('#searchBtn').on()
+        });    // end $('#searchBtn').on()
 
-}); 
 
-function init() {
+    });
 
-    gapi.client.setApiKey('AIzaSyA9HOMNKiV3K5ZiGDVZlOTFovYyu8MgHYg');
+    function buildQuery(topicId)   {
 
-    gapi.client.load('youtube', 'v3', function()    {
+        var request = gapi.client.youtube.search.list({
 
-        // YouTube API is ready.
+            part: 'snippet',
+            type: 'video',
+            maxResults: 24,
+            order: 'relevance',
+            topicId: topicId,
+            q: encodeURIComponent($('#userQuery').val()).replace(/%20/g, '+')
+        });
+
+        return request;
+
+    }   // end buildQuery()
+
+    function init() {
+
+        gapi.client.setApiKey('AIzaSyA9HOMNKiV3K5ZiGDVZlOTFovYyu8MgHYg');
+
+        gapi.client.load('youtube', 'v3', function()    {
+
+            // YouTube API is ready.
 
     });
 
