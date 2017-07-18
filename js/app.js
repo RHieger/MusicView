@@ -32,7 +32,7 @@ $(document).ready(function()    {
 
             console.log(response);
 
-            $('#content').height('2050');
+            $('#content').height('2115');
 
             $('div#searchResults').html('');
 
@@ -52,6 +52,8 @@ $(document).ready(function()    {
                  'frameborder="0" allowfullscreen>' + '</iframe>' + '</div>');
 
             });     // end $.each(results.items)
+
+            $('#license').show();
 
             }); // end request.execute()
 

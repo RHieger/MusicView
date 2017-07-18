@@ -127,11 +127,18 @@ input#userQuery {
     border-radius: 5px;
     padding-top: 12px;
     padding-bottom: 12px;
+    margin-bottom: 25px;
 }
 
 #searchHead {
-    /*margin-top: -25px;*/
     margin-bottom: 12px;
     padding-left: 45px;
+    display: none;
+}
+
+#license {
+    padding-left: 45px;
+    margin-right: auto;
+    margin-left: auto;
     display: none;
 }
