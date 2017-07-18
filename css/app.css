@@ -130,6 +130,14 @@ input#userQuery {
     margin-bottom: 25px;
 }
 
+#loadMsg {
+    width: 200px;
+    height: 35px;
+    margin-right: auto;
+    margin-left: auto;
+    border: inset 2px #333333;
+}
+
 #searchHead {
     margin-bottom: 12px;
     padding-left: 45px;
