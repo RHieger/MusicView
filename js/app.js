@@ -26,8 +26,6 @@ $(document).ready(function()    {
 
         console.log(request);
 
-        $('#loadMsg').fadeIn();
-
         // Execute the request:
 
         request.execute(function(response)  {
@@ -38,7 +36,7 @@ $(document).ready(function()    {
 
             $('div#searchResults').html('');
 
-            $('#searchHead').show();
+            $('#searchHead').fadeIn(2000);
 
             var results = response.result;
 
@@ -62,7 +60,6 @@ $(document).ready(function()    {
             $('#userQuery').val('');
 
         });    // end $('#searchBtn').on()
-
 
     });
 
