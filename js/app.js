@@ -26,13 +26,15 @@ $(document).ready(function()    {
 
         console.log(request);
 
+        $('#loadMsg').fadeIn();
+
         // Execute the request:
 
         request.execute(function(response)  {
 
             console.log(response);
 
-            $('#content').height('2115');
+            $('#content').height('2100');
 
             $('div#searchResults').html('');
 

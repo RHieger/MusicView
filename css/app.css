@@ -109,6 +109,9 @@ input#userQuery {
 /* Special Search Results Styling */
 
 #searchResults  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     padding-left: 45px;
 }
@@ -131,14 +134,12 @@ input#userQuery {
 }
 
 #loadMsg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 200px;
     height: 35px;
     border: inset 3px #888888;
     border-radius: 8px;
     background-color: rgb(255, 255, 204);
+    display: none;
 }
 
 #loadMsg p {
