@@ -131,6 +131,9 @@ input#userQuery {
 }
 
 #loadMsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 35px;
     border: inset 3px #888888;
