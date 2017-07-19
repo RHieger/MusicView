@@ -1,92 +1,121 @@
 // app.js
+//
+// API Code for MusicView v1.0
+//
+// Robert Hieger
+//
+// July 19, 2017
 
-$(document).ready(function()    {
+// Wrap API code in jQuery  that assures the DOM is ready.
 
-    console.log('The DOM is ready.');
+$(document).ready(function()  {
 
-    var topicId;    // topicId for API request
+  console.log('DOM is ready.');
 
-    $('#genres').on('change', function() {
+  // Set the topicId for video search:
 
-        // Extract topicId from #genres:
+  var topicId;    // topicId for API request
 
-        topicId = $(this).val();
+  $('#genres').on('change', function() {
 
-    });
+    // Extract topicId from #genres:
 
-    $('#videoSearch').on('click', function(event)    {
+    topicId = $(this).val();
 
-        event.preventDefault();
+    console.log('Topic ID for this Search: ' + topicId);
 
-        console.log('Button clicked!');
+  }); // end $('#genres').on()
 
-        // Prepare YouTube API request:
-        
-        var request = buildQuery(topicId);
+  /* FUNCTIONS SUPPORTING CREATION OF QUERY TO BE SENT */
 
-        console.log(request);
+  function buildQuery(topicId)   {
 
-        // Execute the request:
+    var request = gapi.client.youtube.search.list({
 
-        request.execute(function(response)  {
-
-            console.log(response);
-
-            $('#content').height('2100');
-
-            $('div#searchResults').html('');
-
-            $('#searchHead').fadeIn(2000);
-
-            var results = response.result;
-
-            $.each(results.items, function(index, item)   {
-
-                console.log(item);
-
-                // NOTE: Standard width and height for embedded HD YouTube
-                //       videos is 640 x 360.
-
-                $('div#searchResults').append('<div>' + '<iframe width="425" height="239"' +
-                 'src="//www.youtube.com/embed/' + item.id.videoId + '"' +
-                 'frameborder="0" allowfullscreen>' + '</iframe>' + '</div>');
-
-            });     // end $.each(results.items)
-
-            $('#license').show();
-
-            }); // end request.execute()
-
-            $('#userQuery').val('');
-
-        });    // end $('#searchBtn').on()
+      part: 'snippet',
+      type: 'video',
+      maxResults: 24,
+      order: 'relevance',
+      topicId: topicId,
+      q: encodeURIComponent($('#userQuery').val()).replace(/%20/g, '+')
 
     });
 
-    function buildQuery(topicId)   {
+    return request;
 
-        var request = gapi.client.youtube.search.list({
+  }   // end buildQuery()
 
-            part: 'snippet',
-            type: 'video',
-            maxResults: 24,
-            order: 'relevance',
-            topicId: topicId,
-            q: encodeURIComponent($('#userQuery').val()).replace(/%20/g, '+')
-        });
+  /* END FUNCTIONS SUPPORTING CREATION OF QUERY TO BE SENT */
 
-        return request;
+  // Send Query to YouTube API:
 
-    }   // end buildQuery()
+  $('#videoSearch').on('click', function(event)    {
 
-    function init() {
+    event.preventDefault();
 
-        gapi.client.setApiKey('AIzaSyA9HOMNKiV3K5ZiGDVZlOTFovYyu8MgHYg');
+    console.log('Button clicked!');
 
-        gapi.client.load('youtube', 'v3', function()    {
+    // Prepare YouTube API request:
 
-            // YouTube API is ready.
+    var request = buildQuery(topicId);
 
-    });
+    console.log('Request Sent to YouTube API: ' + request);
 
-}   // end $(document).ready()
+    // Execute the request:
+
+    request.execute(function(response)  {
+
+      console.log(response);
+
+      $('#content').height('2100');
+
+      $('div#searchResults').html('');
+
+      $('#searchHead').fadeIn(2000);
+
+      var results = response.result;
+
+      $.each(results.items, function(index, item)   {
+
+        console.log(item);
+
+        // NOTE: Standard width and height for embedded HD YouTube
+        //       videos is 640 x 360.
+
+        $('div#searchResults').append('<div>' + '<iframe width="425" height="239"' +
+        'src="//www.youtube.com/embed/' + item.id.videoId + '"' +
+        'frameborder="0" allowfullscreen>' + '</iframe>' + '</div>');
+
+      });   // end $.each(results.items)
+
+      $('#license').show();
+
+    }); // end request.execute()
+
+    $('#userQuery').val('');
+
+  });    // end $('#searchBtn').on()
+
+});   // end $(document).ready()
+
+
+// Initialize the YouTube API:
+
+function init() {
+
+  // Set the API Developer Key:
+
+  gapi.client.setApiKey('AIzaSyA9HOMNKiV3K5ZiGDVZlOTFovYyu8MgHYg');
+
+  // Load the YouTube API
+
+  gapi.client.load('youtube', 'v3', function()  {
+
+    // YouTube API is ready. No other functionality has been added
+    // to this callback function, at least as yet.
+
+    console.log('YouTube API ready.');
+
+  }); // end gapi.client.load()
+
+}; // end init()
