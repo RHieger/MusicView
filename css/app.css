@@ -106,6 +106,24 @@ input#userQuery {
     padding: 6px 12px;
 }
 
+#instructions {
+    width: 78%;
+    margin-top: 25px;
+    border-left: 1.5px solid #c0c0c0;
+    border-right: 1.5px solid #c0c0c0;
+    padding: 0 12px 0 20px;
+    color: #ffffff;
+}
+
+#instructions p {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#logo {
+    padding-top: 45px;
+}
+
 /* Special Search Results Styling */
 
 #searchResults  {
