@@ -184,3 +184,7 @@ input#userQuery {
     margin-left: auto;
     display: none;
 }
+
+#attribution {
+    margin-top: 55px;
+}

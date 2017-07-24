@@ -118,6 +118,6 @@ function init() {
 
     console.log('YouTube API ready.');
 
-  } // end gapi.client.load()
+  }); // end gapi.client.load()
 
-}); // end init()
+}; // end init()
