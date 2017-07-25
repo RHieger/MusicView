@@ -21,6 +21,7 @@ body {
 header {
     width: 98%;
     position: fixed;
+    z-index: 99;
 }
 
 main {
@@ -28,7 +29,8 @@ main {
 }
 
 .well {
-    background-color: rgb(128, 128, 0);
+    background-color: #808000;  /* Olive */
+    opacity: 1;
 }
 
 .well h1,
@@ -133,6 +135,8 @@ input#userQuery {
 
 #searchResults #searchHead  {
     margin-top: -30px;
+    position: relative;
+    z-index: -99;
 }
 
 #searchResults div {
@@ -183,4 +187,8 @@ input#userQuery {
     margin-right: auto;
     margin-left: auto;
     display: none;
+}
+
+#attribution {
+    margin-top: 55px;
 }
