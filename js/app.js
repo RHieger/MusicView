@@ -4,15 +4,11 @@
 //
 // Robert Hieger
 //
-// July 31, 2017
+// July 25, 2017
 
 // Wrap API code in jQuery  that assures the DOM is ready.
 
 $(document).ready(function()  {
-
-  // DEBUG ONLY: Log confirmation to console.
-
-  console.log('DOM is ready.');
 
   // Variable for YouTube topicId:
 
@@ -23,10 +19,6 @@ $(document).ready(function()  {
   $('#genres').on('change', function()  {
 
     topicId = $(this).val();
-
-    // DEBUG ONLY:
-
-    console.log('Topic ID: ' + topicId);
 
   }); // end $('#genres').on()
 
@@ -57,17 +49,9 @@ $(document).ready(function()  {
 
     var request = buildQuery(topicId);
 
-    // DEBUG ONLY:
-
-    console.log('Request Sent to YouTube API:' + request);
-
     // Execute the request:
 
     request.execute(function(response)  {
-
-      // DEBUG ONLY:
-
-      console.log(response);
 
       // Resize div#conent to 2100px.
 
@@ -86,20 +70,12 @@ $(document).ready(function()  {
 
       var results = response.result;
 
-      // DEBUG ONLY:
-
-      console.log($(results));
-
       /* Loop over each item in results and create
          a div in which each embedded video iframe
          may live.
       */
 
       $.each(results.items, function(index, item) {
-
-        // DEBUG ONLY:
-
-        console.log(item);
 
         // NOTE: Standard width and height for embedded HD YouTube
         //       videos is 640 x 360.
@@ -150,10 +126,6 @@ $(document).ready(function()  {
 
     event.preventDefault();
 
-    // DEBUG ONLY:
-
-    console.log('Button clicked!');
-
     // Send Query to YouTube.
 
     sendQuery();
@@ -177,10 +149,6 @@ function init() {
     // YouTube API is ready. No other functionality has
     // been added to this callback function. Any TODO
     // items may be added here.
-
-    // DEBUG ONLY:
-
-    console.log('YouTube API is ready.');
 
   }); // end gapi.client.load()
 
