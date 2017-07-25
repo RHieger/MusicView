@@ -120,6 +120,10 @@ $(document).ready(function()  {
 
     }); // end request.execute()
 
+    // Empty User Query Text.
+
+    $('#userQuery').val('');
+
   } // end sendQuery()
 
   /* END FUNCTIONS SUPPORTING CREATION OF YouTube QUERY */
