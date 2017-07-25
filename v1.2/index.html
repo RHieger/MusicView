@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewpot" content="width=device-width, initial-scale=1.0" />
+
+        <title>MusicView</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+        <!-- Custom Styling -->
+
+        <link rel="stylesheet" href="css/app.css" />
+
+        <!-- favicon -->
+
+        <link rel="icon"
+         type="img/png"
+         href="favicon.png" />
+
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            
+            <header class="row well">
+                
+                <div id="vidSearchBox" class="col-md-7 col-lg-7">
+                    
+                    <h1>Welcome to MusicView</h1>
+
+                    <h2>
+                        <small>Select Your Music Genre:</small>
+                    </h2>
+
+                    <!-- MUSIC GENRE DROPDOWN SELECTION
+
+                         NOTE: ALL DATA ITEMS DERIVED FROM YouTube Data API
+                         Documentation WITH URL:
+
+                         https://developers.google.com/youtube/v3/docs/search/list
+
+                    -->
+
+                    <select id="genres">
+                        <option id="opt0">Choose Your Genre&hellip;</option>
+
+                        <option id="opt1" value="/m/04rlf">
+                            All Music
+                        </option>
+                        <option id="opt2" value="/m/02mscn">
+                            Christian Music
+                        </option>
+                        <option id="opt3" value="/m/0ggq0m">
+                            Classical Music
+                        </option>
+                        <option id="opt4" value="/m/01lyv">
+                            Country
+                        </option>
+                        <option id="opt5" value="/m/02lkt">
+                            Electronic Music
+                        </option>
+                        <option id="opt6" value="/m/0glt670">
+                            Hip Hop Music
+                        </option>
+                        <option id="opt7" value="/m/05rwpb">
+                            Independent Music
+                        </option>
+                        <option id="opt8" value="/m/03_d0">
+                            Jazz
+                        </option>
+                        <option id="opt9" value="/m/028sqc">
+                            Music of Asia
+                        </option>
+                        <option id="opt10" value="/m/0g293">
+                            Music of Latin America
+                        </option>
+                        <option id="opt11" value="/m/064t9">
+                            Pop Music
+                        </option>
+                        <option id="opt12" value="/m/06cqb">
+                            Reggae
+                        </option>
+                        <option id="opt13" value="/m/06j6l">
+                            Rhythm and Blues
+                        </option>
+                        <option id="opt14" value="/m/06by7">
+                            Rock Music
+                        </option>
+                        <option id="opt15" value="/m/0gywn">
+                            Soul Music
+                        </option>
+                    </select>
+
+                    <label for="searchString">Search for:</label>
+
+                    <input type="text" name="searchString" id="userQuery"
+                     placeholder="What would you like to view?" />
+
+                    <button id="videoSearch" class="btn btn-primary">search</button>
+
+                    <div id="instructions">
+                        <p>
+                            <strong>Instructions:</strong> Simply select your
+                            desired music genre in the dropdown above, type
+                            your search string as you would in Google, then
+                            click the search button. That&apos;s all.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-5 col-lg-5">
+                    <figure id="logo">
+                        <img src="images/MusicView-Logo.jpg" alt="MusicView" />
+                    </figure>
+                </div>
+
+            </header>
+
+            <!-- Searched Video Content -->
+
+            <main id="content">
+
+                <div id="searchHead">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <h3 class="text-muted">Your Search Results:</h3>
+                        </div>                        
+                    </div>
+                </div>
+
+                <div id="searchResults">
+
+                    <!-- Temporarily remove #loadMsg -->
+
+                    <!-- Videos Loading Message -->
+
+                    <!--
+
+                    <div id="loadMsg">
+                        <p class="text-center">Videos Loading&hellip;</p>
+                    </div>
+
+                    -->
+
+                    <!-- Dynamic content lives here -->
+
+                </div>
+
+                <div id="license" class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <br />
+                        <a rel="license"
+                         href="http://creativecommons.org/licenses/by/4.0/">
+                         <img alt="Creative Commons License" style="border-width:0"
+                          src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+                          <br />
+                          This work is licensed under a <a rel="license"
+                          href="http://creativecommons.org/licenses/by/4.0/">Creative
+                          Commons Attribution 4.0 International License</a>.
+                    </div>
+                </div>
+
+            </main> <!-- END content -->
+
+            <!-- Latest jQuery Library -->
+
+            <script
+             src="https://code.jquery.com/jquery-3.2.1.min.js"
+             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+             crossorigin="anonymous"></script>
+
+            <!-- Main App -->
+
+            <script src="js/app.js"></script>
+
+            <!-- Google API Library -->
+            
+            <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+        </div>  <!-- END container-fluid -->
+
+    </body>
+
+</html>
