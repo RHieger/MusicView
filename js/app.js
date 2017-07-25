@@ -1,6 +1,6 @@
 // app.js
 //
-// API Code for MusicView v1.1
+// API Code for MusicView v1.1.01
 //
 // Robert Hieger
 //
