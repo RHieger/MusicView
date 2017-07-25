@@ -43,8 +43,6 @@ $(document).ready(function()  {
 
   function sendQuery()  {
 
-    console.log('Query has been sent to YouTube.');
-
     // Prepare YouTube API request:
 
     var request = buildQuery(topicId);
