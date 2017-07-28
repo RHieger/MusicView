@@ -152,29 +152,23 @@ input#userQuery {
     margin-bottom: 25px;
 }
 
-/*#loadMsg {
+#loadMsg {
     width: 200px;
-    height: 35px;
     border: inset 3px #888888;
     border-radius: 8px;
     background-color: rgb(255, 255, 204);
     position: fixed;
-    top: 350px;
-    left: 700px;
-    display: none;
-}*/
+    top: 450px;
+    left: 615px;
+}
 
-/*#searchResults #loadMsg {
-    padding-left: 0;
-}*/
-
-/*#loadMsg p {*/
-    /*margin-top: 4px;
+#loadMsg p {
+    margin-top: 6px;
     font-family: 'Source Sans Pro', 'Helvetica', sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: rgb(255, 26, 26);    /* Red 45% */
-/*}*/
+}
 
 #searchHead {
     margin-bottom: 12px;
