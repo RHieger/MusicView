@@ -152,7 +152,7 @@ input#userQuery {
     margin-bottom: 25px;
 }
 
-#loadMsg {
+.videoMsg {
     width: 200px;
     border: inset 3px #888888;
     border-radius: 8px;
@@ -162,7 +162,7 @@ input#userQuery {
     left: 615px;
 }
 
-#loadMsg p {
+.videoMsg p {
     margin-top: 6px;
     font-family: 'Source Sans Pro', 'Helvetica', sans-serif;
     font-size: 16px;

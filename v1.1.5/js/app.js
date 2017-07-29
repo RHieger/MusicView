@@ -1,10 +1,10 @@
-// app.js
+F// app.js
 //
-// API Code for MusicView v1.1.01
+// API Code for MusicView v1.1.5
 //
 // Robert Hieger
 //
-// July 25, 2017
+// July 31, 2017
 
 // Wrap API code in jQuery  that assures the DOM is ready.
 
@@ -99,6 +99,17 @@ $(document).ready(function()  {
     $('#userQuery').val('');
 
   } // end sendQuery()
+
+  function loadMessage()  {
+
+    document.createElement('div');
+
+    $('#searchResults').append('<div class="videoMsg">' + '<p class="text-center">'
+      + 'Videos Loading&hellip;</p>' + '</div>')
+
+    $('.videoMsg').fadeIn(1000);
+
+  } // end loadMessage()
 
   /* END FUNCTIONS SUPPORTING CREATION OF YouTube QUERY */
 
