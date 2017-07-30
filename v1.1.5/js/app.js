@@ -1,4 +1,4 @@
-F// app.js
+// app.js
 //
 // API Code for MusicView v1.1.5
 //
@@ -64,6 +64,10 @@ $(document).ready(function()  {
 
       $('#searchHead').fadeIn(2000);
 
+      // Show "Videos Loading..." Message.
+
+      loadMessage();
+
       // Store search results:
 
       var results = response.result;
@@ -102,12 +106,7 @@ $(document).ready(function()  {
 
   function loadMessage()  {
 
-    document.createElement('div');
-
-    $('#searchResults').append('<div class="videoMsg">' + '<p class="text-center">'
-      + 'Videos Loading&hellip;</p>' + '</div>')
-
-    $('.videoMsg').fadeIn(1000);
+    $('.videoMsg').fadeIn(5000);
 
   } // end loadMessage()
 
@@ -124,6 +123,8 @@ $(document).ready(function()  {
       sendQuery();
 
     } // end if
+
+    $('.videoMsg').fadeOut(3500);
 
   });
 

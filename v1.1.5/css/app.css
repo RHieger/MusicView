@@ -152,7 +152,7 @@ input#userQuery {
     margin-bottom: 25px;
 }
 
-.videoMsg {
+.loadMsg {
     width: 200px;
     border: inset 3px #888888;
     border-radius: 8px;
@@ -160,9 +160,10 @@ input#userQuery {
     position: fixed;
     top: 450px;
     left: 615px;
+    display: none;
 }
 
-.videoMsg p {
+.LoadMsg p {
     margin-top: 6px;
     font-family: 'Source Sans Pro', 'Helvetica', sans-serif;
     font-size: 16px;
@@ -172,7 +173,7 @@ input#userQuery {
 
 #searchHead {
     margin-bottom: 12px;
-    padding-left: 45px;
+    padding-left: 45px;w
     display: none;
 }
 
